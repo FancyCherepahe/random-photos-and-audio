@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        img {
+            max-width: auto;
+            height: inherit;
+        }
+        p {
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <p>Нажміть на екран щоби молоток застукав!</p>
+    <audio autoplay muted id="background-music">
+        <source src="audio/деревяний молоток.mp3" type="audio/mp3">
+    </audio>
+    <img src="images/hammer.jpg" alt="Image">
+</body>
+<script>
+document.addEventListener("click", () => {
+    const music = document.getElementById("background-music");
+    music.muted = false;
+    music.play();
+}, { once: true });
+</script>
+</html>
